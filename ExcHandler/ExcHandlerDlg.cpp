@@ -171,7 +171,6 @@ void CExcHandlerDlg::OnDropFiles(HDROP hDropInfo)
 {
 	// TODO: Add your message handler code here and/or call default
 	wchar_t	szDroppedFile[MAX_PATH];
-	HDROP	hDrop;
 	int nFiles;
 	CString csString;
 
