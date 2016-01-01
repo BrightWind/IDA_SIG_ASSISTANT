@@ -65,8 +65,5 @@
     <Image Include="res\ExcHandler.ico">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="D:\workspace\baby_erp_pc\fe\source\page\personelScheduling\drag-files-realsize.jpg">
-      <Filter>Resource Files</Filter>
-    </Image>
   </ItemGroup>
 </Project>

@@ -126,7 +126,6 @@
     <None Include="res\ExcHandler.rc2" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="D:\workspace\baby_erp_pc\fe\source\page\personelScheduling\drag-files-realsize.jpg" />
     <Image Include="res\ExcHandler.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

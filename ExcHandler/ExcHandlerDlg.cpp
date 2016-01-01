@@ -210,6 +210,10 @@ void CExcHandlerDlg::HandleExc(CString file_path)
 		BOOL add_plus = FALSE;
 
 		while (file.ReadString(line_str)) {
+			if (line_str.GetAt(0) == ';') {
+				continue;
+			}
+
 			if (line_str.IsEmpty()) {
 				add_plus = TRUE;
 				file_bk.WriteString(L"\n");
@@ -228,7 +232,7 @@ void CExcHandlerDlg::HandleExc(CString file_path)
 		file.Close();
 		file_bk.Close();
 
-
-
+		DeleteFile(file_path);
+		_wrename(file_path + L"_bk", file_path);
 	}
 }

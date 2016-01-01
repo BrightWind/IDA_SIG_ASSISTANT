@@ -1,4 +1,4 @@
-
+﻿
 // ExcHandler.cpp : Defines the class behaviors for the application.
 //
 
@@ -71,6 +71,30 @@ BOOL CExcHandlerApp::InitInstance()
 	SetRegistryKey(_T("Local AppWizard-Generated Applications"));
 
 	CExcHandlerDlg dlg;
+
+	if (__argc == 2) {
+		
+		CString file_name;
+		LPWSTR *szArglist = NULL;
+		//获取参数 以及参数个数。
+		szArglist = CommandLineToArgvW(GetCommandLineW(), &__argc);
+		if (NULL == szArglist)
+		{
+			return FALSE;
+		}
+		file_name = szArglist[1];
+		LocalFree(szArglist);
+
+		CString cur_path;
+		GetCurrentDirectory(MAX_PATH, cur_path.GetBuffer(MAX_PATH));
+		cur_path.ReleaseBuffer();
+		CString file_path = cur_path + "\\" + file_name;
+		dlg.HandleExc(file_path);
+
+		delete pShellManager;
+		return FALSE;
+	}
+
 	m_pMainWnd = &dlg;
 	INT_PTR nResponse = dlg.DoModal();
 	if (nResponse == IDOK)
